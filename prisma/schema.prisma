@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ActivityTag {
+  FOOD
+  HISTORIC
+  PARTY
+  DILLAN_SPECIAL
+  SEASON_SUMMER
+  SEASON_WINTER
+  SEASON_ALL
+}
+
+model Activity {
+  id          String       @id @default(uuid()) @unique
+  title       String
+  description String
+  location    String        // Google Maps link
+  latitude    Float?        // optional, for map later
+  longitude   Float?        // optional, for map later
+  photoUrl    String
+  tags        ActivityTag[]
+  fave        Boolean       @default(false)
+  trips       Trip[]
+}
+
+model Trip {
+  id                 String    @id @default(uuid()) @unique
+  title              String
+  guests             String[]  // array of names
+  dateStarted        DateTime
+  daysInBerlin       Int?
+  highlights         String?
+  interestingThings  String?
+  photoUrl           String?
+  activities         Activity[]
+  updatedAt          DateTime   @updatedAt
+}
