@@ -77,4 +77,21 @@ router.patch(
   }
 );
 
+// DELETE api/trip/:tripId
+router.delete(
+  "/:tripId",
+  async (req: Request, res: Response, next: NextFunction) => {
+    const tripId: string = req.params.tripId;
+
+    try {
+      const tripResponse = await prisma.trip.delete({
+        where: { id: tripId },
+      });
+      res.status(200).json(tripResponse);
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
 module.exports = router;
