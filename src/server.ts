@@ -6,3 +6,6 @@ const PORT = process.env.PORT || 5005;
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
 });
+
+const indexRouter = require("./routes/index.routes");
+app.use("/api", indexRouter);
