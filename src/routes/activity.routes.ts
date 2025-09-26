@@ -6,7 +6,7 @@ import { Activity } from "../generated/prisma";
 //GET api/activity
 router.get("/", async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const activities = await prisma.activity.findMany();
+    const activities = await prisma.activity.findMany({include: { trips: true }});
     res.json(activities);
   } catch (err) {
     next(err); 
@@ -17,12 +17,11 @@ router.get("/", async (req: Request, res: Response, next: NextFunction) => {
 router.get("/:activityId", async (req:Request,res:Response,next:NextFunction)=>{
     const activityId=req.params.activityId
     try{
-        const response: Activity[]=await prisma.activity.findUnique({where: {id:activityId}})
+        const response =await prisma.activity.findUnique({where: {id:activityId},include: { trips: true }})
         res.status(201).json(response)
     }catch(err){
         next(err)
     }
-
 })
 
 

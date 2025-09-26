@@ -8,7 +8,7 @@ router.get("/", (req:Request, res:Response, next:NextFunction) => {
 const activityRouter= require (`./activity.routes`)
 router.use("/activity",activityRouter)
 
-// const tripRouter=require(`./trip.routes`)
-// router.use("/trip",tripRouter)
+const tripRouter=require(`./trip.routes`)
+router.use("/trip",tripRouter)
 
 module.exports = router;
