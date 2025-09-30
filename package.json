@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp -r ./src/generated dist/generated",
     "start": "node dist/server.js",
     "predev": "prisma generate",
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
