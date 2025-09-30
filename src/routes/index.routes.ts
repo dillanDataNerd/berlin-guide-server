@@ -6,9 +6,9 @@ router.get("/", (req:Request, res:Response, next:NextFunction) => {
 });
 
 const activityRouter= require (`./activity.routes`)
-router.use("/activity",activityRouter)
+router.use("/activities",activityRouter)
 
 const tripRouter=require(`./trip.routes`)
-router.use("/trip",tripRouter)
+router.use("/trips",tripRouter)
 
 module.exports = router;
