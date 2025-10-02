@@ -6,7 +6,7 @@ Berlin Guide is a full-stack web application that helps people explore activitie
 The purpose of building this project was to practice and deepen knowledge in:
 1. **TypeScript** – for type-safety and maintainability  
 2. **Postgres / Prisma** – for relational data modeling and querying  
-3. **Material UI** – exploring a wide range of UI components  
+3. **Material UI** – exploring a wider range of UI components  
 
 👉 **Live App:** [https://berlinguide.netlify.app](https://berlinguide.netlify.app)  
 👉 **Client Repository:** [berlin-guide-client](https://github.com/dillanDataNerd/berlin-guide-client)  
@@ -18,20 +18,16 @@ The purpose of building this project was to practice and deepen knowledge in:
 - **Prisma ORM** – database access and migrations  
 - **PostgreSQL** – relational database  
 - **TypeScript** – strongly typed backend code  
-- **dotenv** – environment variable management  
 - **CORS / Morgan / Cookie-Parser** – common Express middlewares  
 - **UUID** – unique identifiers for activities and trips  
 
 ---
 
 ## Backlog Functionalities
-- Authentication & user accounts  
 - Ability to favorite and rate activities  
 - Map integration (using stored latitude/longitude)  
-- File/image upload for trips and activities  
-- More advanced filters (tags, seasons, favorites combined)  
-- Sharing trips with friends  
-
+- More advanced filters (tags, seasons, favorites combined)
+- Full CRUD capabilties for trips and related activities
 ---
 
 ## Models
@@ -87,7 +83,6 @@ The **client app** consumes these API endpoints from the server:
 - `DELETE /api/trips/:id` – delete a trip  
 
 - `GET /api/activities` – fetch all activities  
-- `POST /api/activities` – create a new activity  
 - `GET /api/activities/:id` – fetch single activity details  
 - `PUT /api/activities/:id` – update an activity  
 - `DELETE /api/activities/:id` – delete an activity  
