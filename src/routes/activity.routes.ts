@@ -24,11 +24,11 @@ router.get(
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       console.log(req.query);
-      const title: string | undefined = req.query.title || undefined;
-      const fave: string | undefined = req.query.fave || undefined;
+      const title = req.query.title || undefined;
+      const fave = req.query.fave || undefined;
       const faveBoolean: boolean | undefined =
         typeof fave === "string" ? JSON.parse(fave) : undefined;
-      const tagString: string | null = req.query.tags;
+      const tagString = req.query.tags;
       const tagArray: string[] =
         typeof tagString === "string" ? tagString.split("-") : [];
 
