@@ -32,7 +32,7 @@ router.get(
   }
 );
 
-// POST api/trip/tripId
+// POST api/trip
 
 router.post("/", async (req: Request, res: Response, next: NextFunction) => {
   const body = req.body;
