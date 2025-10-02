@@ -84,8 +84,6 @@ The **client app** consumes these API endpoints from the server:
 
 - `GET /api/activities` – fetch all activities  
 - `GET /api/activities/:id` – fetch single activity details  
-- `PUT /api/activities/:id` – update an activity  
-- `DELETE /api/activities/:id` – delete an activity  
 
 - `GET /api/activities/search` – filter activities by title, tags, or favorites  
 
